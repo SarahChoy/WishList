@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: lightblue;
+            color: white;
+            text-align: center;
+            font-family: cursive;
+            font-size: X-large;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        button {
+            font-size: 40px;
+            padding: 15px;
+        }
+
+        input {
+            font-size: 30px;
+            padding: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Wish List!</h1>
+    <input id="userInput" type="text">
+    <button id="printYes">Add to List</button>
+
+    <script>
+        var printYes = document.querySelector("#printYes")
+        printYes.onclick = addTextToPage
+
+
+        function addTextToPage() {
+            var userInput = document.querySelector("#userInput")
+            var newElement = document.createElement("h1")  //create element
+            var newText = document.createTextNode(userInput.value)  //create text
+            newElement.appendChild(newText)  //add text to element
+            document.body.appendChild(newElement)  //add element to body
+
+            userInput.value = ""
+        }
+    </script>
+</body>
+
+</html>
